@@ -2,7 +2,7 @@
   "id": "controllerrumble",
   "name": "Controller Rumble",
   "description": "Adds controller rumble!",
-  "version": "PRERELEASE",
+  "version": "1.0.0",
   "manifestVersion": 1,
   "_flags": [
     "do_olid"

@@ -14,7 +14,7 @@ Debug = false
 
 # Automatically says "Yes" to all update prompts.
 # Great for launching the game directly from Steam!
-Auto = true
+Auto = false
 
 # Reverse the ASCII art. Just for fun.
 AprilFools = false

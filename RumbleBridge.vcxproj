@@ -44,15 +44,19 @@
     </Link>
     
     <!-- ================================================================= -->
-    <!-- POST-BUILD EVENT: Automatically copies files to the .exe folder   -->
+    <!-- POST-BUILD EVENT: Automatically copies all assets to the .exe folder -->
     <!-- ================================================================= -->
     <PostBuildEvent>
       <Command>
         copy /Y "$(ProjectDir)start.bat" "$(TargetDir)start.bat"
+        copy /Y "$(ProjectDir)Launch-Rumble.ps1" "$(TargetDir)Launch-Rumble.ps1"
         copy /Y "$(ProjectDir)README.txt" "$(TargetDir)README.txt"
+        copy /Y "$(ProjectDir)quotes.txt" "$(TargetDir)quotes.txt"
+        if exist "$(ProjectDir)config.txt" copy /Y "$(ProjectDir)config.txt" "$(TargetDir)config.txt"
         copy /Y "$(ProjectDir)dependencies\ViGEmClient.dll" "$(TargetDir)ViGEmClient.dll"
+        xcopy /Y /I /E "$(ProjectDir)OMORI Mod\rumble" "$(TargetDir)rumble\"
       </Command>
-      <Message>Copying start.bat, README.txt, and ViGEmClient.dll to output directory...</Message>
+      <Message>Copying start.bat, Launch-Rumble.ps1, README.txt, quotes.txt, config.txt (if present), ViGEmClient.dll, and OMORI Mod to output directory...</Message>
     </PostBuildEvent>
 
   </ItemDefinitionGroup>
